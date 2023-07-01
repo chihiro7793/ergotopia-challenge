@@ -31,7 +31,7 @@ import EmptyList from './EmptyList.vue';
 import LoadingList from './LoadingList.vue';
 
 
-const MAX_PAGE_SIZE = 5;
+const MAX_PAGE_NUM = 5;
 const DEFAULT_PAGE_SIZE = 10;
 export default {
     components: {
@@ -82,7 +82,7 @@ export default {
                 case 'back':
                     return this.page === 0 || !this.recepies.length
                 case 'next':
-                    return this.page === MAX_PAGE_SIZE || !this.recepies.length;
+                    return this.page === MAX_PAGE_NUM || !this.recepies.length;
                 default:
                     return false;
             }
@@ -91,7 +91,7 @@ export default {
             if (value === 'back' && this.page !== 0) {
                 this.page--;
             }
-            if (value === 'next' && this.page !== MAX_PAGE_SIZE) {
+            if (value === 'next' && this.page !== MAX_PAGE_NUM) {
                 this.page++;
             }
         }
